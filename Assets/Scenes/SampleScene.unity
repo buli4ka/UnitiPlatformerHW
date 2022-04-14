@@ -441,7 +441,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1698670182}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -509,7 +509,6 @@ GameObject:
   - component: {fileID: 892878788}
   - component: {fileID: 892878792}
   - component: {fileID: 892878793}
-  - component: {fileID: 892878794}
   - component: {fileID: 892878795}
   m_Layer: 0
   m_Name: Player
@@ -666,19 +665,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &892878794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892878787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8b76ea1ed19f14996e1d736d9e62ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bananasText: {fileID: 633968568}
 --- !u!114 &892878795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,6 +678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthText: {fileID: 992509077}
+  bananasText: {fileID: 633968568}
+  playerHealth: 100
 --- !u!1 &979719941
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +743,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1698670182}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -42243,8 +42231,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 633968567}
   - {fileID: 992509076}
+  - {fileID: 633968567}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
