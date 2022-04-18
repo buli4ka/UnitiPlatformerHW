@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private BoxCollider2D _boxCollider2D;
 
+    [SerializeField] private AudioSource jumpSoundEffect;
+
 
     private static readonly int State = Animator.StringToHash("PlayerState");
 
@@ -60,11 +62,14 @@ public class PlayerMovement : MonoBehaviour
         {
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
             _canDoubleJump = true;
+            jumpSoundEffect.Play();
         }
         else if (Input.GetButtonDown("Jump") && _canDoubleJump)
         {
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpForce);
             _canDoubleJump = false;
+            jumpSoundEffect.Play();
+
         }
     }
 

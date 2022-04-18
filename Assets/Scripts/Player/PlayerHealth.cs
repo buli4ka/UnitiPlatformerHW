@@ -10,6 +10,13 @@ namespace Player
     {
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
+        
+        [SerializeField] private AudioSource deathSoundEffect;
+        
+        [SerializeField] private AudioSource bananaCollectionSoundEffect;
+        [SerializeField] private AudioSource appleCollectionSoundEffect;
+
+
 
         [FormerlySerializedAs("HealthText")] [SerializeField]
         private Text healthText;
@@ -50,13 +57,20 @@ namespace Player
             Destroy(collision.gameObject);
             _collectedBananas++;
             bananasText.text = $"Bananas: {_collectedBananas.ToString()}";
+            bananaCollectionSoundEffect.Play();
         }
 
         private void Damage(Collision2D collision)
         {
-            if (!collision.gameObject.CompareTag("Traps")) return;
+            if (collision.gameObject.CompareTag("Traps"))
+            {
+                playerHealth -= 14;
+            }
+            else if(collision.gameObject.CompareTag("Enemy"))
+            {
+                playerHealth -= 20;
+            }
 
-            playerHealth -= 14;
         }
 
         private void Heal(Collision2D collision)
@@ -68,6 +82,7 @@ namespace Player
             {
                 playerHealth = 100;
             }
+            appleCollectionSoundEffect.Play();
         }
 
         private void Death()
@@ -76,6 +91,7 @@ namespace Player
             playerHealth = 0;
             _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetTrigger(Dead);
+            deathSoundEffect.Play();
         }
 
         private void RestartLevel()
