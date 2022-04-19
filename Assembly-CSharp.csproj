@@ -60,6 +60,8 @@
      <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\Finish\FinishBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Navigation\StartMenu.cs" />
+     <Compile Include="Assets\Scripts\Navigation\EndMenu.cs" />
      <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.33f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
